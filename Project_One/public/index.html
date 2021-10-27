@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Request User Media</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+  <link rel="stylesheet" href="stylesheets/screen.css" />
+</head>
+<body>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <nav>
+      <input type="checkbox" id="nav" class="hidden">
+      <label for="nav" class="nav-btn">
+        <i></i>
+        <i></i>
+        <i></i>
+      </label>
+      <div class="logo">
+        <img src="images/iit_logo.png" width="100px" height="50px">
+        <br><br>
+        <a href="#">WELCOME TO THE BEST VIDEOCHAT APP!</a>
+        <h1> Touch your video to change the video effect ! </h1>
+      </div>
+      <div class="nav-wrapper">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="chat.html">CHAT</a></li>
+          <li><a href="#">EXPLORE</a></li>
+          <li><a href="#">PROFILE</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="self-video">
+      <video id="self"  width="640" height="360"
+          autoplay
+          muted
+          playsinline>
+      </video>
+    </div>
+    <div class="peer-video">
+      <video id="peer" width="640" height="360"
+          autoplay
+          playsinline>
+      </video>
+    </div>
+    <div class="player-buttons">
+      <button type="button" class="call-button" id="call-button"><ion-icon name="call" size="large" id="call-icon" ></ion-icon></button>
+      <button type="button" class="call-button" id="mute-button"><ion-icon name="mic" size="large" id="mute-icon" ></ion-icon></button>
+    </div>
+    <article id="chat">
+      <h2 class="access">Text Chat</h2>
+      <ol id="chat-log">
+      </ol>
+      <form id="chat-form" action="#null" method="get">
+        <label class="access" for="chat-input">Your Message</label>
+        <input id="chat-input" type="text" autocomplete="off" />
+        <label class="access" for="chat-input">Send Message</label>
+        <button id="chat-button" type="submit">Send</button>
+      </form>
+    </article>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://webrtchacks.github.io/adapter/adapter-latest.js"></script>
+<script src="javascripts/main.js"></script>
+</body>
+</html>
