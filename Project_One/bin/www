@@ -19,8 +19,13 @@ app.set('port', port);
  * Enviroment variables
  */
 
- const { LOCALHOST_SSL_KEY, LOCALHOST_SSL_CERT } = process.env;
-
+let { LOCALHOST_SSL_KEY, LOCALHOST_SSL_CERT } = process.env;
+if (!LOCALHOST_SSL_CERT) {
+  LOCALHOST_SSL_CERT = `${__dirname}/certs/server.cert`;
+}
+if (!LOCALHOST_SSL_KEY) {
+  LOCALHOST_SSL_KEY = `${__dirname}/certs/server.key`;
+}
 /**
  * Create HTTP server.
  */
@@ -40,6 +45,7 @@ io.attach(server);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+console.log(`App running at https://localhost:${port}`);
 
 /**
  * Normalize a port into a number, string, or false.
